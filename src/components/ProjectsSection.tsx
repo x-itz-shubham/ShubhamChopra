@@ -78,52 +78,6 @@ const ProjectsSection = () => {
       icon: Database,
       color: "secondary"
     },
-    {
-      title: "Vulnerability Research Papers",
-      type: "research",
-      description: "Published research on phishing attacks and cyber threat prevention",
-      details: [
-        "Conducted comprehensive review of phishing attack methodologies",
-        "Analyzed emerging cyber-attack patterns and identification techniques",
-        "Developed prevention measures and security recommendations",
-        "Presented findings at International Conference on Cybersecurity",
-        "Contributed to cybersecurity knowledge base and community research"
-      ],
-      technologies: ["Research", "Analysis", "Documentation", "Cybersecurity", "Academic Writing"],
-      features: [
-        "Peer-reviewed publications",
-        "Conference presentations",
-        "Industry recommendations",
-        "Security best practices",
-        "Academic contributions"
-      ],
-      status: "published",
-      icon: Shield,
-      color: "accent"
-    },
-    {
-      title: "Enterprise Security Assessment",
-      type: "security",
-      description: "Real-world vulnerability discovery and security enhancement project",
-      details: [
-        "Identified 5+ critical vulnerabilities in production systems",
-        "Conducted comprehensive security assessments across multiple applications",
-        "Performed sensitive information disclosure analysis",
-        "Provided detailed remediation strategies and security recommendations",
-        "Collaborated with development teams for secure coding implementation"
-      ],
-      technologies: ["VAPT", "Burp Suite", "Manual Testing", "Security Assessment", "Risk Analysis"],
-      features: [
-        "Critical vulnerability discovery",
-        "Production system analysis",
-        "Risk impact assessment",
-        "Remediation strategies",
-        "Security improvements"
-      ],
-      status: "ongoing",
-      icon: Bug,
-      color: "primary"
-    }
   ];
 
   const getStatusColor = (status: string) => {

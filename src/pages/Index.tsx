@@ -9,6 +9,7 @@ import ProjectsSection from '@/components/ProjectsSection';
 import CertificationsSection from '@/components/CertificationsSection';
 import EducationSection from '@/components/EducationSection';
 import Footer from '@/components/Footer';
+import ScrollAnimations from '@/components/ScrollAnimations';
 
 const Index = () => {
   useEffect(() => {
@@ -21,11 +22,14 @@ const Index = () => {
       {/* Animated Matrix Background */}
       <MatrixBackground />
       
+      {/* Scroll Animations */}
+      <ScrollAnimations />
+      
       {/* Navigation */}
       <Navigation />
       
       {/* Main Content */}
-      <main className="relative z-10">
+      <main className="relative z-10" style={{ paddingTop: '120px' }}>
         <HeroSection />
         <AboutSection />
         <ExperienceSection />

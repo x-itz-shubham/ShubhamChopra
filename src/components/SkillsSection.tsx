@@ -86,53 +86,6 @@ const SkillsSection = () => {
       ]
     },
     {
-      name: 'Security Operations',
-      icon: Eye,
-      color: 'text-secondary',
-      skills: [
-        {
-          name: 'SOC/SIEM',
-          level: 85,
-          category: 'operations',
-          icon: Eye,
-          description: 'Security Operations Center management',
-          color: 'secondary'
-        },
-        {
-          name: 'Trend Micro XDR',
-          level: 80,
-          category: 'operations',
-          icon: Shield,
-          description: 'Extended Detection and Response',
-          color: 'secondary'
-        },
-        {
-          name: 'Threat Intelligence',
-          level: 75,
-          category: 'operations',
-          icon: AlertTriangle,
-          description: 'Threat analysis and reporting',
-          color: 'secondary'
-        },
-        {
-          name: 'Incident Response',
-          level: 80,
-          category: 'operations',
-          icon: Users,
-          description: 'Security incident management',
-          color: 'secondary'
-        },
-        {
-          name: 'Zscaler',
-          level: 70,
-          category: 'operations',
-          icon: Network,
-          description: 'Cloud security platform',
-          color: 'secondary'
-        }
-      ]
-    },
-    {
       name: 'Technical Skills',
       icon: Code,
       color: 'text-accent',
@@ -162,37 +115,84 @@ const SkillsSection = () => {
           color: 'accent'
         },
         {
+          name: 'SOC/SIEM',
+          level: 85,
+          category: 'technical',
+          icon: Eye,
+          description: 'Security Operations Center management',
+          color: 'accent'
+        },
+        {
           name: 'Network Security',
           level: 75,
           category: 'technical',
           icon: Network,
           description: 'Network infrastructure security',
           color: 'accent'
+        }
+      ]
+    },
+    {
+      name: 'Soft Skills',
+      icon: Eye,
+      color: 'text-secondary',
+      skills: [
+        {
+          name: 'Team Leadership',
+          level: 90,
+          category: 'soft',
+          icon: Users,
+          description: 'Leading cross-functional security teams',
+          color: 'secondary'
         },
         {
-          name: 'Checkpoint Harmony',
-          level: 70,
-          category: 'technical',
+          name: 'Strategic Thinking',
+          level: 85,
+          category: 'soft',
           icon: Lock,
-          description: 'Endpoint security solution',
-          color: 'accent'
+          description: 'Security strategy and planning',
+          color: 'secondary'
+        },
+        {
+          name: 'Problem Solving',
+          level: 95,
+          category: 'soft',
+          icon: AlertTriangle,
+          description: 'Complex security challenge resolution',
+          color: 'secondary'
+        },
+        {
+          name: 'Risk Assessment',
+          level: 88,
+          category: 'soft',
+          icon: Shield,
+          description: 'Security risk evaluation and mitigation',
+          color: 'secondary'
+        },
+        {
+          name: 'Communication',
+          level: 85,
+          category: 'soft',
+          icon: Mail,
+          description: 'Technical communication to stakeholders',
+          color: 'secondary'
         }
       ]
     }
   ];
 
   const categories = [
-    { id: 'security', name: 'Security Testing', icon: Shield },
-    { id: 'operations', name: 'SOC Operations', icon: Eye },
-    { id: 'technical', name: 'Technical', icon: Code }
+    { id: 'security', name: 'Security Tools', icon: Shield },
+    { id: 'technical', name: 'Technical Skills', icon: Code },
+    { id: 'soft', name: 'Soft Skills', icon: Eye }
   ];
 
   const getCurrentSkills = () => {
     const category = skillCategories.find(cat => 
       cat.name.toLowerCase().includes(activeCategory) || 
-      (activeCategory === 'security' && cat.name === 'Security Testing') ||
-      (activeCategory === 'operations' && cat.name === 'Security Operations') ||
-      (activeCategory === 'technical' && cat.name === 'Technical Skills')
+      (activeCategory === 'security' && cat.name === 'Security Tools') ||
+      (activeCategory === 'technical' && cat.name === 'Technical Skills') ||
+      (activeCategory === 'soft' && cat.name === 'Soft Skills')
     );
     return category?.skills || [];
   };
@@ -314,37 +314,14 @@ const SkillsSection = () => {
                   </div>
                   <div className="text-terminal-text">
                     {activeCategory === 'security' && "Specialized in web application security testing, vulnerability assessment, and penetration testing using industry-standard tools."}
-                    {activeCategory === 'operations' && "Experienced in security operations, threat detection, incident response, and managing enterprise security solutions."}
                     {activeCategory === 'technical' && "Strong technical foundation in security automation, infrastructure management, and email security protocols."}
+                    {activeCategory === 'soft' && "Excellent leadership and communication skills with experience managing security teams and stakeholder relationships."}
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Additional Skills */}
-          <div className="mt-8 text-center">
-            <h3 className="text-lg font-bold text-gradient-cyber font-orbitron mb-4">
-              SOFT SKILLS
-            </h3>
-            <div className="flex flex-wrap justify-center gap-2">
-              {[
-                'Team Leadership',
-                'Strategic Thinking', 
-                'Problem Solving',
-                'Risk Assessment',
-                'Communication',
-                'Continuous Learning'
-              ].map((skill) => (
-                <Badge 
-                  key={skill}
-                  className="bg-gradient-cyber text-accent-foreground font-mono animate-glow-pulse"
-                >
-                  {skill}
-                </Badge>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
