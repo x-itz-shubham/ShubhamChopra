@@ -28,7 +28,7 @@ const Footer = () => {
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-2 text-terminal-text">
                   <Mail className="w-4 h-4 text-primary" />
-                  <span>Available on request</span>
+                  <span>choprashubham1309@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-2 text-terminal-text">
                   <Phone className="w-4 h-4 text-secondary" />
@@ -36,7 +36,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center gap-2 text-terminal-text">
                   <MapPin className="w-4 h-4 text-accent" />
-                  <span>Ludhiana, Punjab, India</span>
+                  <span>Gurugram, Haryana, India</span>
                 </div>
               </div>
             </div>
@@ -51,6 +51,7 @@ const Footer = () => {
                   variant="ghost" 
                   size="sm" 
                   className="w-full justify-start text-terminal-text hover:text-primary hover:bg-primary/10"
+                  onClick={() => window.open('https://www.linkedin.com/in/shubham-chopra-577b28216/', '_blank')}
                 >
                   <Linkedin className="w-4 h-4 mr-2" />
                   LinkedIn Profile
@@ -59,6 +60,7 @@ const Footer = () => {
                   variant="ghost" 
                   size="sm" 
                   className="w-full justify-start text-terminal-text hover:text-secondary hover:bg-secondary/10"
+                  onClick={() => window.open('https://github.com/x-itz-shubham', '_blank')}
                 >
                   <Github className="w-4 h-4 mr-2" />
                   GitHub Repository
@@ -67,6 +69,7 @@ const Footer = () => {
                   variant="ghost" 
                   size="sm" 
                   className="w-full justify-start text-terminal-text hover:text-accent hover:bg-accent/10"
+                  onClick={() => window.open('https://tryhackme.com/p/XDFCypher', '_blank')}
                 >
                   <Terminal className="w-4 h-4 mr-2" />
                   TryHackMe Profile

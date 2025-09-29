@@ -304,21 +304,6 @@ const SkillsSection = () => {
                 ))}
               </div>
 
-              {/* Summary */}
-              <div className="mt-8 p-4 bg-muted/10 border border-terminal-border rounded">
-                <div className="font-mono text-sm">
-                  <div className="text-primary mb-2">
-                    <span className="text-secondary">user@security:</span>
-                    <span className="text-muted-foreground">~$ </span>
-                    <span className="text-primary">echo "Skills summary for {activeCategory}"</span>
-                  </div>
-                  <div className="text-terminal-text">
-                    {activeCategory === 'security' && "Specialized in web application security testing, vulnerability assessment, and penetration testing using industry-standard tools."}
-                    {activeCategory === 'technical' && "Strong technical foundation in security automation, infrastructure management, and email security protocols."}
-                    {activeCategory === 'soft' && "Excellent leadership and communication skills with experience managing security teams and stakeholder relationships."}
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
 

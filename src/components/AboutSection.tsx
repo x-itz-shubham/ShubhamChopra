@@ -98,13 +98,42 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* Achievements Cards */}
+            {/* Achievements Section */}
             <div className="space-y-6">
               <div className="text-center mb-8">
                 <h3 className="text-xl font-bold text-gradient-cyber font-orbitron mb-2">
                   KEY ACHIEVEMENTS
                 </h3>
                 <div className="w-16 h-1 bg-gradient-cyber mx-auto"></div>
+              </div>
+
+              {/* Quantified Achievements from Hero */}
+              <div className="text-primary mb-4">
+                <span className="text-secondary">user@security:</span>
+                <span className="text-muted-foreground">~$ </span>
+                <span className="text-primary">cat achievements.log</span>
+              </div>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 text-center">
+                <div className="bg-muted/20 p-4 rounded border border-terminal-border">
+                  <div className="text-2xl font-bold text-primary mb-1">300+</div>
+                  <div className="text-xs text-muted-foreground">Servers Secured</div>
+                </div>
+                
+                <div className="bg-muted/20 p-4 rounded border border-terminal-border">
+                  <div className="text-2xl font-bold text-secondary mb-1">5000+</div>
+                  <div className="text-xs text-muted-foreground">Devices Protected</div>
+                </div>
+                
+                <div className="bg-muted/20 p-4 rounded border border-terminal-border">
+                  <div className="text-2xl font-bold text-accent mb-1">25%</div>
+                  <div className="text-xs text-muted-foreground">Incident Reduction</div>
+                </div>
+
+                <div className="bg-muted/20 p-4 rounded border border-terminal-border">
+                  <div className="text-2xl font-bold text-warning mb-1">40%</div>
+                  <div className="text-xs text-muted-foreground">Phishing Reduction</div>
+                </div>
               </div>
               
               {achievements.map((achievement, index) => (

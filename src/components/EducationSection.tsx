@@ -249,57 +249,6 @@ const EducationSection = () => {
             </div>
           </div>
 
-          {/* Academic Summary */}
-          <div className="terminal-window">
-            <div className="terminal-header">
-              <div className="flex items-center gap-2">
-                <div className="terminal-dot terminal-dot-red"></div>
-                <div className="terminal-dot terminal-dot-yellow"></div>
-                <div className="terminal-dot terminal-dot-green"></div>
-              </div>
-              <div className="text-xs font-mono text-muted-foreground ml-4">
-                academic_summary.sh
-              </div>
-            </div>
-            
-            <div className="p-6 font-mono">
-              <div className="text-primary mb-4">
-                <span className="text-secondary">user@security:</span>
-                <span className="text-muted-foreground">~$ </span>
-                <span className="text-primary">./generate_academic_report.sh</span>
-              </div>
-              
-              <div className="space-y-2 text-terminal-text text-sm">
-                <div>
-                  <span className="text-accent">Education Level:</span> Post Graduate (MCA)
-                </div>
-                <div>
-                  <span className="text-accent">Academic Performance:</span> 
-                  <span className="text-green-400"> Exceptional</span> (Gold Medalist)
-                </div>
-                <div>
-                  <span className="text-accent">Research Publications:</span> {publications.length}
-                </div>
-                <div>
-                  <span className="text-accent">Specialization:</span> Information Security & Cybersecurity
-                </div>
-                <div>
-                  <span className="text-accent">Academic Focus:</span> Applied Research in Cybersecurity
-                </div>
-              </div>
-
-              <div className="mt-6 p-4 bg-muted/10 border border-terminal-border rounded">
-                <div className="text-primary font-mono text-sm mb-2">
-                  <span className="text-accent"># </span>Academic Philosophy
-                </div>
-                <div className="text-terminal-text text-sm">
-                  "Strong academic foundation combined with practical application. Committed to bridging 
-                  the gap between theoretical knowledge and real-world cybersecurity challenges through 
-                  continuous learning and research."
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
