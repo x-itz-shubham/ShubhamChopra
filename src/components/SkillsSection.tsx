@@ -39,7 +39,7 @@ const SkillsSection = () => {
 
   const skillCategories: SkillCategory[] = [
     {
-      name: 'Security Testing',
+      name: 'Security Tools',
       icon: Shield,
       color: 'text-primary',
       skills: [
@@ -60,11 +60,11 @@ const SkillsSection = () => {
           color: 'primary'
         },
         {
-          name: 'OWASP Top 10',
-          level: 95,
+          name: 'ZAP',
+          level: 80,
           category: 'security',
-          icon: AlertTriangle,
-          description: 'Web application security vulnerabilities',
+          icon: Shield,
+          description: 'OWASP Zed Attack Proxy',
           color: 'primary'
         },
         {
@@ -76,11 +76,35 @@ const SkillsSection = () => {
           color: 'primary'
         },
         {
-          name: 'ZAP',
+          name: 'Trend Micro EDR/XDR',
+          level: 85,
+          category: 'security',
+          icon: Eye,
+          description: 'Endpoint detection and response solutions',
+          color: 'primary'
+        },
+        {
+          name: 'Checkpoint Harmony',
           level: 80,
           category: 'security',
           icon: Shield,
-          description: 'OWASP Zed Attack Proxy',
+          description: 'Email and collaboration security',
+          color: 'primary'
+        },
+        {
+          name: 'Bloodhound',
+          level: 75,
+          category: 'security',
+          icon: Network,
+          description: 'Active Directory attack path analysis',
+          color: 'primary'
+        },
+        {
+          name: 'Mimikatz',
+          level: 70,
+          category: 'security',
+          icon: Lock,
+          description: 'Windows credential extraction tool',
           color: 'primary'
         }
       ]
@@ -107,27 +131,35 @@ const SkillsSection = () => {
           color: 'accent'
         },
         {
-          name: 'Email Security',
+          name: 'Vulnerability Assessment & Management',
           level: 90,
           category: 'technical',
-          icon: Mail,
-          description: 'SPF, DMARC, DKIM configuration',
+          icon: Search,
+          description: 'Comprehensive vulnerability lifecycle management',
           color: 'accent'
         },
         {
-          name: 'SOC/SIEM',
+          name: 'SOC, EDR/XDR Operations',
           level: 85,
           category: 'technical',
           icon: Eye,
-          description: 'Security Operations Center management',
+          description: 'Security operations and threat detection',
           color: 'accent'
         },
         {
-          name: 'Network Security',
-          level: 75,
+          name: 'Phishing Attack Simulation & Training',
+          level: 88,
           category: 'technical',
-          icon: Network,
-          description: 'Network infrastructure security',
+          icon: Mail,
+          description: 'Security awareness and training programs',
+          color: 'accent'
+        },
+        {
+          name: 'Governance',
+          level: 80,
+          category: 'technical',
+          icon: Shield,
+          description: 'Security governance and compliance frameworks',
           color: 'accent'
         }
       ]

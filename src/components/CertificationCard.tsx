@@ -9,6 +9,7 @@ interface CertificationCardProps {
   description: string;
   year: string;
   status: 'Active' | 'Completed';
+  logo?: string;
   delay?: number;
 }
 
@@ -18,7 +19,8 @@ const CertificationCard = ({
   code, 
   description, 
   year, 
-  status, 
+  status,
+  logo,
   delay = 0 
 }: CertificationCardProps) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -34,13 +36,35 @@ const CertificationCard = ({
         isFlipped ? 'rotate-y-180' : ''
       }`}>
         {/* Front Side */}
-        <Card className="absolute inset-0 w-full h-full bg-card/50 border-card-border backface-hidden">
-          <div className="p-6 h-full flex flex-col justify-between">
+        <Card className="absolute inset-0 w-full h-full bg-card/50 border-card-border backface-hidden overflow-hidden">
+          {/* Logo Background */}
+          {logo && (
+            <div className="absolute inset-0 opacity-10">
+              <img 
+                src={logo} 
+                alt={`${name} logo`}
+                className="w-full h-full object-contain p-8"
+              />
+            </div>
+          )}
+          
+          <div className="p-6 h-full flex flex-col justify-between relative z-10">
             <div>
               <div className="flex items-center justify-between mb-3">
-                <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                  <div className="w-4 h-4 bg-primary rounded"></div>
-                </div>
+                {logo && (
+                  <div className="w-10 h-10 bg-background/80 rounded-lg flex items-center justify-center p-1">
+                    <img 
+                      src={logo} 
+                      alt={`${name} logo`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                )}
+                {!logo && (
+                  <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
+                    <div className="w-4 h-4 bg-primary rounded"></div>
+                  </div>
+                )}
                 <Badge 
                   className={`text-xs font-mono ${
                     status === 'Active' 
@@ -57,7 +81,7 @@ const CertificationCard = ({
               </h3>
               
               <p className="text-sm text-muted-foreground mb-3">
-                Issued by {issuer}
+                {issuer}
               </p>
             </div>
             

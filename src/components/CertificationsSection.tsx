@@ -1,4 +1,9 @@
 import CertificationCard from '@/components/CertificationCard';
+import cehLogo from '@/assets/ceh-logo.png';
+import ccLogo from '@/assets/cc-logo.png';
+import capLogo from '@/assets/cap-logo.png';
+import tcmLogo from '@/assets/tcm-logo.png';
+import nptelLogo from '@/assets/nptel-logo.png';
 
 interface Certification {
   name: string;
@@ -7,6 +12,7 @@ interface Certification {
   description: string;
   year: string;
   status: 'Active' | 'Completed';
+  logo?: string;
 }
 
 const CertificationsSection = () => {
@@ -17,7 +23,8 @@ const CertificationsSection = () => {
       code: "CEH",
       description: "Industry-leading ethical hacking certification covering penetration testing, vulnerability assessment, and security audit techniques.",
       year: "2024",
-      status: "Active"
+      status: "Active",
+      logo: cehLogo
     },
     {
       name: "Certified in Cybersecurity (CC)",
@@ -25,7 +32,8 @@ const CertificationsSection = () => {
       code: "ISC²-CC",
       description: "Foundation-level certification in cybersecurity principles, covering security concepts, risk management, and security controls.",
       year: "2024",
-      status: "Active"
+      status: "Active",
+      logo: ccLogo
     },
     {
       name: "Certified AppSec Practitioner (CAP)",
@@ -33,7 +41,8 @@ const CertificationsSection = () => {
       code: "CAP",
       description: "Specialized certification in application security, focusing on secure coding practices and web application testing.",
       year: "2023",
-      status: "Active"
+      status: "Active",
+      logo: capLogo
     },
     {
       name: "Practical Web Security Testing",
@@ -41,7 +50,8 @@ const CertificationsSection = () => {
       code: "PWST",
       description: "Hands-on certification in web application penetration testing with practical real-world scenarios.",
       year: "2023",
-      status: "Completed"
+      status: "Completed",
+      logo: tcmLogo
     },
     {
       name: "Introduction to Cybersecurity",
@@ -49,7 +59,8 @@ const CertificationsSection = () => {
       code: "NPTEL-CS",
       description: "Academic certification covering fundamental cybersecurity concepts and emerging security threats.",
       year: "2022",
-      status: "Completed"
+      status: "Completed",
+      logo: nptelLogo
     }
   ];
 
@@ -82,6 +93,7 @@ const CertificationsSection = () => {
                 description={cert.description}
                 year={cert.year}
                 status={cert.status}
+                logo={cert.logo}
                 delay={index * 0.1}
               />
             ))}

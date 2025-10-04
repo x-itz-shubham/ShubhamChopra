@@ -249,7 +249,7 @@ const ExperienceSection = () => {
               <div className="font-mono text-sm text-primary mb-2">
                 <span className="text-secondary">user@security:</span>
                 <span className="text-muted-foreground">~$ </span>
-                <span className="text-primary">echo "Total experience: 1+ years in Information Security"</span>
+                <span className="text-primary">echo "Total experience: 2+ years in Information Security"</span>
               </div>
               <p className="text-muted-foreground">
                 Specializing in enterprise security, vulnerability management, and security operations
