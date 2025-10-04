@@ -113,7 +113,7 @@ const CertificationCard = ({
           <div className="p-6 h-full flex flex-col justify-center relative z-10">
             <div className="text-center">
               {logo && (
-                <div className="w-16 h-16 bg-background/80 rounded-lg flex items-center justify-center mx-auto mb-4 p-2">
+                <div className="w-20 h-20 bg-white/95 rounded-lg flex items-center justify-center mx-auto mb-4 p-3 shadow-lg">
                   <img 
                     src={logo} 
                     alt={`${name} logo`}
@@ -131,7 +131,7 @@ const CertificationCard = ({
                 {code}
               </h4>
               
-              <p className="text-sm text-terminal-text leading-relaxed">
+              <p className="text-sm text-terminal-text leading-relaxed px-2">
                 {description}
               </p>
               
