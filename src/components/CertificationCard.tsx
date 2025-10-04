@@ -36,7 +36,7 @@ const CertificationCard = ({
         isFlipped ? 'rotate-y-180' : ''
       }`}>
         {/* Front Side */}
-        <Card className="absolute inset-0 w-full h-full bg-card/50 border-card-border backface-hidden overflow-hidden">
+        <Card className="absolute inset-0 w-full h-full bg-card/50 border-card-border backface-hidden overflow-hidden" style={{ backfaceVisibility: 'hidden' }}>
           {/* Logo Background */}
           {logo && (
             <div className="absolute inset-0 opacity-10">
@@ -98,48 +98,29 @@ const CertificationCard = ({
         </Card>
 
         {/* Back Side */}
-        <Card className="absolute inset-0 w-full h-full bg-card/50 border-card-border backface-hidden rotate-y-180 overflow-hidden">
-          {/* Logo Background */}
+        <Card className="absolute inset-0 w-full h-full bg-card/50 border-card-border backface-hidden rotate-y-180 overflow-hidden" style={{ backfaceVisibility: 'hidden' }}>
           {logo && (
-            <div className="absolute inset-0 opacity-10">
-              <img 
-                src={logo} 
-                alt={`${name} logo`}
-                className="w-full h-full object-contain p-8"
-              />
+            <div className="absolute inset-0 opacity-10 pointer-events-none">
+              <img src={logo} alt={`${name} logo`} className="w-full h-full object-contain p-8" />
             </div>
           )}
-          
-          <div className="p-6 h-full flex flex-col justify-center relative z-10">
-            <div className="text-center">
-              {logo && (
-                <div className="w-20 h-20 bg-white/95 rounded-lg flex items-center justify-center mx-auto mb-4 p-3 shadow-lg">
-                  <img 
-                    src={logo} 
-                    alt={`${name} logo`}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
-              {!logo && (
-                <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <div className="w-6 h-6 bg-secondary rounded"></div>
-                </div>
-              )}
-              
-              <h4 className="font-bold text-secondary mb-3 font-orbitron">
-                {code}
-              </h4>
-              
-              <p className="text-sm text-terminal-text leading-relaxed px-2">
-                {description}
-              </p>
-              
-              <div className="mt-4 pt-3 border-t border-card-border">
-                <div className="flex items-center justify-center gap-2 text-xs font-mono">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-green-400">VERIFIED</span>
-                </div>
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-6 relative z-10">
+            {logo && (
+              <div className="rounded-lg bg-background/95 shadow-lg flex items-center justify-center overflow-visible w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mb-4">
+                <img src={logo} alt={`${name} logo`} className="max-w-full max-h-full object-contain" />
+              </div>
+            )}
+            {!logo && (
+              <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <div className="w-6 h-6 bg-secondary rounded"></div>
+              </div>
+            )}
+            <h4 className="font-bold text-secondary mb-3 font-orbitron">{code}</h4>
+            <p className="text-sm text-terminal-text leading-relaxed text-center px-2">{description}</p>
+            <div className="mt-4 pt-3 border-t border-card-border w-full max-w-xs">
+              <div className="flex items-center justify-center gap-2 text-xs font-mono">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="text-green-400">VERIFIED</span>
               </div>
             </div>
           </div>
