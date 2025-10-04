@@ -98,12 +98,34 @@ const CertificationCard = ({
         </Card>
 
         {/* Back Side */}
-        <Card className="absolute inset-0 w-full h-full bg-card/50 border-card-border backface-hidden rotate-y-180">
-          <div className="p-6 h-full flex flex-col justify-center">
+        <Card className="absolute inset-0 w-full h-full bg-card/50 border-card-border backface-hidden rotate-y-180 overflow-hidden">
+          {/* Logo Background */}
+          {logo && (
+            <div className="absolute inset-0 opacity-10">
+              <img 
+                src={logo} 
+                alt={`${name} logo`}
+                className="w-full h-full object-contain p-8"
+              />
+            </div>
+          )}
+          
+          <div className="p-6 h-full flex flex-col justify-center relative z-10">
             <div className="text-center">
-              <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <div className="w-6 h-6 bg-secondary rounded"></div>
-              </div>
+              {logo && (
+                <div className="w-16 h-16 bg-background/80 rounded-lg flex items-center justify-center mx-auto mb-4 p-2">
+                  <img 
+                    src={logo} 
+                    alt={`${name} logo`}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              )}
+              {!logo && (
+                <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <div className="w-6 h-6 bg-secondary rounded"></div>
+                </div>
+              )}
               
               <h4 className="font-bold text-secondary mb-3 font-orbitron">
                 {code}
