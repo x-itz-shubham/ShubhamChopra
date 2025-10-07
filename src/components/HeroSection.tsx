@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Shield, Terminal, Code, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const HeroSection = () => {
   const [displayedText, setDisplayedText] = useState('');
@@ -17,12 +18,6 @@ const HeroSection = () => {
     }
   }, [currentIndex, fullText]);
 
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -93,12 +88,13 @@ const HeroSection = () => {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button 
-              onClick={scrollToAbout}
-              className="bg-gradient-matrix text-primary-foreground font-mono glow-matrix hover:scale-105 transition-all duration-300"
-            >
-              [Execute Portfolio]
-            </Button>
+            <Link to="/about">
+              <Button 
+                className="bg-gradient-matrix text-primary-foreground font-mono glow-matrix hover:scale-105 transition-all duration-300"
+              >
+                [Execute Portfolio]
+              </Button>
+            </Link>
             
             <Button 
               variant="outline" 
@@ -110,10 +106,11 @@ const HeroSection = () => {
 
           {/* Scroll Indicator */}
           <div className="animate-bounce">
-            <ChevronDown 
-              className="w-6 h-6 text-primary mx-auto cursor-pointer hover:text-secondary transition-colors" 
-              onClick={scrollToAbout}
-            />
+            <Link to="/about">
+              <ChevronDown 
+                className="w-6 h-6 text-primary mx-auto cursor-pointer hover:text-secondary transition-colors"
+              />
+            </Link>
           </div>
         </div>
       </div>

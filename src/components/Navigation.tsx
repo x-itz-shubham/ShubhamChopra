@@ -1,49 +1,29 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const Navigation = () => {
-  const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   const sections = [
-    { id: 'hero', label: '~/home' },
-    { id: 'about', label: '~/about' },
-    { id: 'experience', label: '~/experience' },
-    { id: 'skills', label: '~/skills' },
-    { id: 'projects', label: '~/projects' },
-    { id: 'certifications', label: '~/certs' },
-    { id: 'education', label: '~/education' }
+    { path: '/', label: '~/home' },
+    { path: '/about', label: '~/about' },
+    { path: '/experience', label: '~/experience' },
+    { path: '/skills', label: '~/skills' },
+    { path: '/projects', label: '~/projects' },
+    { path: '/certifications', label: '~/certs' },
+    { path: '/education', label: '~/education' }
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-
-      // Find active section
-      const scrollPosition = window.scrollY + 100;
-      
-      for (const section of sections) {
-        const element = document.getElementById(section.id);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section.id);
-            break;
-          }
-        }
-      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -62,19 +42,19 @@ const Navigation = () => {
           {/* Navigation Menu */}
           <div className="hidden md:flex items-center space-x-1">
             {sections.map((section) => (
-              <Button
-                key={section.id}
-                variant="ghost"
-                size="sm"
-                onClick={() => scrollToSection(section.id)}
-                className={`font-mono text-sm transition-all duration-300 ${
-                  activeSection === section.id
-                    ? 'text-primary bg-primary/10 glow-matrix'
-                    : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
-                }`}
-              >
-                {section.label}
-              </Button>
+              <Link key={section.path} to={section.path}>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className={`font-mono text-sm transition-all duration-300 ${
+                    location.pathname === section.path
+                      ? 'text-primary bg-primary/10 glow-matrix'
+                      : 'text-muted-foreground hover:text-primary hover:bg-primary/5'
+                  }`}
+                >
+                  {section.label}
+                </Button>
+              </Link>
             ))}
           </div>
 
@@ -94,7 +74,7 @@ const Navigation = () => {
           <span className="mx-2">|</span>
           <span className="text-secondary">◆</span> SECURE CONNECTION
           <span className="mx-2">|</span>
-          <span className="text-accent">▲</span> {activeSection.toUpperCase()}
+          <span className="text-accent">▲</span> {location.pathname.replace('/', '').toUpperCase() || 'HOME'}
         </div>
       </div>
     </nav>
