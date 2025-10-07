@@ -96,12 +96,18 @@ const HeroSection = () => {
               </Button>
             </Link>
             
-            <Button 
-              variant="outline" 
-              className="border-secondary text-secondary hover:bg-secondary/10 font-mono glow-cyber"
+            <a 
+              href="https://drive.google.com/file/d/1jBaaMGieTnrYVFb0jHQI60uPLQ2dMs2K/view?usp=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer"
             >
-              [Download Resume]
-            </Button>
+              <Button 
+                variant="outline" 
+                className="border-secondary text-secondary hover:bg-secondary/10 font-mono glow-cyber"
+              >
+                [Download Resume]
+              </Button>
+            </a>
           </div>
 
           {/* Scroll Indicator */}
