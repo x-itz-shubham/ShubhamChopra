@@ -23,7 +23,7 @@ const CertificationsSection = () => {
       issuer: "TCM Security",
       code: "PJPT",
       description: "Comprehensive hands-on penetration testing certification covering real-world attack scenarios and practical exploitation techniques.",
-      year: "2024",
+      year: "2025",
       status: "Active",
       logo: tcmLogo,
       link: "https://api.accredible.com/v1/auth/invite?code=565a0c9240d772a1367e&credential_id=87e0c8b0-866b-4397-bfe5-2c6d2eac8f1f&url=https%3A%2F%2Fcertified.tcm-sec.com%2F87e0c8b0-866b-4397-bfe5-2c6d2eac8f1f%3Fkey%3Ddc562a544138aa213e5c6948c2f4e28f5994eb631014e17386752a73d7d6c801&ident=a5239b06-a11a-4b36-8904-a79618091efb"
