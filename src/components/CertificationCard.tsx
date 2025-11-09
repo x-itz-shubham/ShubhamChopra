@@ -33,17 +33,6 @@ const CertificationCard = ({
       style={{ animationDelay: `${delay}s` }}
     >
       <Card className="h-full bg-card/50 border-card-border overflow-hidden transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.3)] hover:scale-105 cursor-pointer">
-        {/* Logo Background */}
-        {logo && (
-          <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity">
-            <img 
-              src={logo} 
-              alt={`${name} logo`}
-              className="w-full h-full object-contain p-8"
-            />
-          </div>
-        )}
-        
         <div className="p-6 h-full flex flex-col justify-between relative z-10">
           <div>
             <div className="flex items-center justify-between mb-3">
